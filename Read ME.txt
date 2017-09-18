@@ -1,0 +1,39 @@
+HOW TO RUN:
+
+1. Download the latest pintool 3.4. It might not work in the older version.
+2. Copy the makefile, makefile.rules and opcodemix.cpp in the SimpleExamples folder.
+3. Run a make for the SimpleExamples folder.
+4. Cd to obj-intel64 directory.
+5. Test by running command ../../../../pin -t opcodemix.so -- /bin/ls
+6. The outputs will be present in files part_1 to part_6.
+7. The sample outputs provided are for the /bin/ls.
+
+IMPLEMENTATION:
+
+PART 1: 
+
+> do_ins_count() function gets inserted before every instruction.
+> Instruction() function defines where the do_ins_count() is to be inserted.
+
+PART 2:
+
+> ImageLoad() and ImageUnload() are the two function that print the images loaded.
+
+PART 3:
+
+> Trace() is the instrumentation function and makes sure that every system call gets documented.
+> DumpStats() prints the static and dynamic counts to the output file.
+
+PART 4:
+> Trace_call() instruments function before every function call. 
+> The inserted function document the arguments and other information of the function call.
+
+PART 5:
+
+> Image_malloc() makes sure that our functions get inserted before every malloc/free.  
+> MallocAfter() prints to the file what was returned after the malloc/free was requested.
+
+PART 6:
+
+> All system calls are assigned fixed decimal numbers upto 255. 
+> Making use of these numbers to identify system calls such as read, write etc.
